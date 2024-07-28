@@ -1,3 +1,5 @@
-def to_alphameric(s)
-  s.gsub(/[^a-zA-Z0-9]/, '')
+class String
+  def to_alphameric
+    gsub(/[^\w\s]/, '')
+  end
 end

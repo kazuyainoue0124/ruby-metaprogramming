@@ -1,5 +1,3 @@
-# Monetize gemの動作確認
-
 require 'money'
 
 # Set the rounding mode explicitly to avoid the warning
@@ -8,6 +6,8 @@ Money.rounding_mode = BigDecimal::ROUND_HALF_UP
 # # Set the locale backend to avoid the deprecation warning
 Money.locale_backend = :currency
 
+# Monetize gemの動作確認
+# Monetize.from_numericメソッドを使って数値からMoneyオブジェクトを生成する
 require 'monetize'
 
 bargain_price = Monetize.from_numeric(99, "USD")

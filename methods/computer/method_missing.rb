@@ -14,6 +14,15 @@ class Computer
     return "* #{result}" if price >= 100
     result
   end
+
+  # 現状だと以下のコードがfalseを返してしまう
+  # cmp = Computer.new(0, DS.new)
+  # cmp.respond_to?(:mouse) #=> false
+  # そのため、以下のコードを追加する
+  # method_missingを使っている場合は、respond_to_missing?メソッドもオーバーライドする必要がある
+  def respond_to_missing?(method, include_private = false)
+    @data_source.respond_to?("get_#{method}_info") || super
+  end
 end
 
 my_computer = Computer.new(42, DS.new)

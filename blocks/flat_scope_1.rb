@@ -3,7 +3,7 @@ my_var = "成功"
 
 class MyClass
   # my_var をここに表示したい...
-  # p = my_var
+  p = my_var
   # undefined local variable or method `my_var' for class MyClass (NameError)
   
   def my_method
